@@ -18,7 +18,7 @@ spring:
             brokers: 192.168.84.137:9092  #ip地址根据实际kafka集群地址,如果是多个以逗号隔开
             zkNodes: 192.168.84.137:2181  #ip地址根据实际zookeeper集群地址,如果是多个以逗号隔开
 
-#被监控项目配置
+#被监控项目配置 
   zipkin:
     #服务端地址
     base-url: http://${configurl}:9411/
