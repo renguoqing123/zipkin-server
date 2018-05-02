@@ -4,7 +4,7 @@ spring-cloud-zipkin
 
 
 #子项目bootstrap.yml文件添加如下配置，可实现异步消息处理，实时监控
-======================
+------------
   spring:<br>
      application:<br>
       name: meta-data<br>
