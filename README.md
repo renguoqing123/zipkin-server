@@ -11,8 +11,8 @@ spring:
   application:
     name: meta-data
   cloud:
-      config:
-        uri: http://${configurl}:777/
+      config: #配置中心地址
+        uri: http://${configurl}:777/
         profile: ${profile}
         label: master
       stream:
