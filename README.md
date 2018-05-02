@@ -24,7 +24,7 @@ spring:
 #被监控项目配置
   zipkin:
     #服务端地址
-    base-url: http://${configurl}:9411/
+    base-url: http://127.0.0.1:9411/
     service:
       #本项目服务名
       name: ${spring.application.name}
