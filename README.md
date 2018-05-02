@@ -3,7 +3,7 @@ spring-cloud-zipkin
 配置被监控的项目：https://github.com/renguoqing123/service
 
 
-#子项目bootstrap.yml文件添加如下配置，可实现异步消息处理，实时监控
+#外部项目bootstrap.yml文件添加如下配置，可实现异步消息处理，实时监控
 ------------
 ```
 #子项目bootstrap.yml文件添加如下配置，可实现异步消息处理，实时监控
