@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: app-monitor
+  sleuth:
+    enabled: false #false表示当前程序不使用sleuth
+    sampler:
+      percentage: 1.0
+  datasource:
+    name: zipkin
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zipkin?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: root
+    schema[0]: classpath:/mysql.sql #数据库脚本创建地址，当有多个是可使用[x]表示集合第几个元素
+    initialize: true
+    continue-on-error: true
+  cloud:
+      stream:
+        kafka:
+          binder:
+            brokers: 192.168.84.137:9092,192.168.84.138:9092,192.168.84.139:9092  #ip地址根据实际kafka集群地址,如果是多个以逗号隔开
+            zkNodes: 192.168.84.137:2181,192.168.84.138:2181,192.168.84.139:2181  #ip地址根据实际zookeeper集群地址,如果是多个以逗号隔开
+
+server:
+  port: 9411
+  address: localhost
+
+zipkin:
+  storage:
+#     mysql:
+#       host: 127.0.0.1
+#       port: 3306
+#       username: root
+#       password: root
+#       db: zipkin
+    type: mysql #保存数据到mysql
